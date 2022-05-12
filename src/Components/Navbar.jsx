@@ -5,6 +5,7 @@ export const Navbar = () => {
   return (
     <div>
        <Link to='/'>HOME</Link> 
+       <Link to='/employees'>Employees</Link>
     </div>
   )
 }
