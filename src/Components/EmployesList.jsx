@@ -26,9 +26,13 @@ export const EmployesList = () => {
         {employee.map((e)=>(
           <div key={e.id}>
               <img src={e.image} alt="" />
-              <div>{e.employee_name}</div>
-          <div>{e.title}</div>
-          
+              <div>Name: {e.employee_name}</div>
+          <div>Title: {e.title}</div>
+          <div>Salary: {e.salary}</div>
+          <div>UserName: {e.username}</div>
+          <div>Task: {e.task}</div>
+          <div>Status: {e.status}</div>
+          <div>Team: {e.team}</div>
           </div>
           
         ))}
