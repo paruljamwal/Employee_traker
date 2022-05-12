@@ -6,6 +6,7 @@ import { Route, Routes } from 'react-router-dom';
 import { EmployesList } from './Components/EmployesList';
 import { Login } from './Components/Login';
 import { Logout } from './Components/Logout';
+import { EmployeesDetails } from './Components/EmployeesDetails';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
      <Route path='/employees' element={<EmployesList></EmployesList>}></Route>
       <Route path='/login' element={<Login></Login>}></Route>
       <Route path='/logout' element={<Logout></Logout>}></Route>
+      <Route path='/employees/:id' element={<EmployeesDetails></EmployeesDetails>}></Route>
    </Routes>
     </div>
   );

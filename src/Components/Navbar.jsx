@@ -8,6 +8,8 @@ export const Navbar = () => {
        <Link to='/'>HOME</Link> 
        <Link to='/employees'>Employees</Link>
         <Link to={isAuth ? "/logout" : "/login"}>{isAuth ? "Logout ": "Login"}</Link>  
+        {/* <Link to='/employees/:id'>Details</Link> */}
+        
     </div>
   )
 }

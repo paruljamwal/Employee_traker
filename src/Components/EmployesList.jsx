@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom';
 //useEffect are used for making async call
 export const EmployesList = () => {
   const [employee,setEmployee]=useState([]);
@@ -24,6 +25,7 @@ export const EmployesList = () => {
         marginTop:"30px"
     }}>
         {employee.map((e)=>(
+            <Link to={`/employees/${e.id}`}>
           <div key={e.id}>
               <img src={e.image} alt="" />
               <div>Name: {e.employee_name}</div>
@@ -34,7 +36,7 @@ export const EmployesList = () => {
           <div>Status: {e.status}</div>
           <div>Team: {e.team}</div>
           </div>
-          
+          </Link>
         ))}
     </div>
   )
