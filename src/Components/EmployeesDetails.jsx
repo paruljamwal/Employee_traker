@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { Navigate, useNavigate, useParams } from 'react-router-dom'
-import { AuthContext } from '../Context/auth'
+import { AuthContext } from '../Context/auth';
+import axios from 'axios';
 export const EmployeesDetails = () => {
  
 
@@ -22,6 +23,24 @@ export const EmployeesDetails = () => {
   if(!isAuth){
       return <Navigate to={'/login'}></Navigate>
   }
+
+
+  //TERMINATED FUN
+  //axios
+   const handelterminate=()=>{
+       axios.patch(`http://localhost:8080/employee/${id}`,{
+         ...employee,"status":"terminted"
+       })
+    .then(function(res){
+      setEmployee(res.data) //update after termination
+    })
+    .catch(function(error){
+      console.log(error);
+    })
+
+
+      }
+
     return (
     <div>
     {/* login first berfor access */}
@@ -29,6 +48,7 @@ export const EmployeesDetails = () => {
       <div>{employee.employee_name}</div>
       <div>{employee.task}</div>
       <div>{employee.status}</div>
+      <div>{employee.status==="working" ? <button onClick={()=>{handelterminate()}}>TERMINATE</button> : <div>TERMINATED</div>}</div>
     </div>
   )
 }
